@@ -47,7 +47,7 @@ object jsonParser {
     // Defining Rdd with Json String
     val rdd6 = spark.sparkContext.parallelize(jsonStr :: Nil)
 
-    //Reading Json from an RDD[String]..
+    //Reading Json from an RDD[String]
     val df6 = spark.read.json(rdd6)
 
 
@@ -83,7 +83,7 @@ object jsonParser {
       .add("City", StringType, true)
       .add("State", StringType, true)
 
-    //defining schema for df7
+    //defining schema for df7 --
     val schema7 = new StructType()
       .add("Name", StringType, true)
       .add("knownLanguages", ArrayType(StringType), true)
