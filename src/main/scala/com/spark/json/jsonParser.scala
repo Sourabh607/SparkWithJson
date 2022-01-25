@@ -76,14 +76,14 @@ object jsonParser {
     val read = spark.sqlContext.sql(s""" Select * from df2 where RecordNumber = 10 """)
     read.show()
 
-    //defining schema for df4--
+    //defining schema for df4
     val schema4 = new StructType()
       .add("Zipcode", LongType, true)
       .add("ZipCodeType", StringType, true)
       .add("City", StringType, true)
       .add("State", StringType, true)
 
-    //defining schema for df7--
+    //defining schema for df7
     val schema7 = new StructType()
       .add("Name", StringType, true)
       .add("knownLanguages", ArrayType(StringType), true)
@@ -106,7 +106,6 @@ object jsonParser {
     df7_2.show(false)
     df7_2.select($"Name", $"Languages", explode_outer($"properties")).show(100, false)
 
-    read.write.mode(SaveMode.Overwrite).json("E:\\jsonFile.json") //chk comment
-
+    read.write.mode(SaveMode.Overwrite).json("E:\\jsonFile.json")
   }
 }
