@@ -47,7 +47,7 @@ object jsonParser {
     // Defining Rdd with Json String
     val rdd6 = spark.sparkContext.parallelize(jsonStr :: Nil)
 
-    //Reading Json from an RDD[String]
+    //Reading Json from an RDD[String].
     val df6 = spark.read.json(rdd6)
 
 
