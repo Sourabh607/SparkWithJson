@@ -106,7 +106,7 @@ object jsonParser {
     df7_2.show(false)
     df7_2.select($"Name", $"Languages", explode_outer($"properties")).show(100, false)
 
-    read.write.mode(SaveMode.Overwrite).json("E:\\jsonFile.json") //chk comment
+    read.write.mode(SaveMode.Overwrite).json("E:\\jsonFile.json") //chk
 
   }
 }
